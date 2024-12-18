@@ -29,6 +29,12 @@
 - Update store with trailer video data
 - embedded the youtube video and make it autoplay and mute
 - Tweaking Maincontainer using tailwind
+- Build secondary container
+- Build movie list
+- Build movie card
+- TMDB API reference
+- Beautifying our page
+- custom hook for multiple movie lists
 
 # to Deply
 
