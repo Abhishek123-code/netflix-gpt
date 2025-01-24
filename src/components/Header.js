@@ -4,10 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
-import { LOGO } from "../utils/constants";
+import { LOGO, supportedLanguages } from "../utils/constants";
+import { toggleGpt } from "../utils/GptSlice";
+import { changeLang } from "../utils/configSlice";
 
 const Header = () => {
   const user = useSelector((store) => store.user);
+  const toggleGptLang = useSelector((store) => store.gpt.toggleGpt);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -47,12 +50,37 @@ const Header = () => {
     //unsubscribe when components unmounts
     return () => unsubscribe();
   }, []);
+  const handleGptToggle = () => {
+    dispatch(toggleGpt());
+  };
+
+  const handleLanguageChange = (e) => {
+    dispatch(changeLang(e.target.value));
+  };
 
   return (
     <div className="absolute z-50 w-full pl-32 from-black bg-gradient-to-b flex justify-between items-center">
       <img src={LOGO} alt="logo" className="w-56" />
       {user && (
         <div className="flex items-center">
+          {toggleGptLang && (
+            <select
+              className="p-2 bg-gray-700 text-white rounded-lg"
+              onChange={handleLanguageChange}
+            >
+              {supportedLanguages.map((lang) => (
+                <option key={lang.identifier} value={lang.identifier}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          )}
+          <button
+            className="text-white bg-purple-700 p-3 rounded-lg font-bold mx-10"
+            onClick={handleGptToggle}
+          >
+            {toggleGptLang ? "Homepage" : "GPT Search"}
+          </button>
           <img alt="user" src={user?.photoURL} className="w-14 h-14" />
           <button
             onClick={handleSignOut}

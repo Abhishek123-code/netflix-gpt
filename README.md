@@ -35,6 +35,9 @@
 - TMDB API reference
 - Beautifying our page
 - custom hook for multiple movie lists
+- GPT search Page
+- GPT seearch Bar
+- Multi-language Search in our App\*
 
 # to Deply
 
