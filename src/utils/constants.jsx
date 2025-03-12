@@ -11,8 +11,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MDJmYWQ0NTU4YjdkNWUxMjVlMzY0ODMyZTZlZGQ2MyIsIm5iZiI6MTcyODIxNTU3NC43NjcwODEsInN1YiI6IjY3MDI3NmQ3OWViZWExOTAwNmY4OTQ0MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iG2nw58796t0HePteoQQzST4C8D128Pxer_VZ_-m2NA",
+    Authorization: "Bearer " + import.meta.env.VITE_TMDB_API_KEY,
   },
 };
 
@@ -23,3 +22,5 @@ export const supportedLanguages = [
 ];
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
+
+export const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;

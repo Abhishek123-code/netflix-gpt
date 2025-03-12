@@ -36,8 +36,12 @@
 - Beautifying our page
 - custom hook for multiple movie lists
 - GPT search Page
-- GPT seearch Bar
-- Multi-language Search in our App\*
+- GPT search Bar
+- Multi-language Search in our App
+- Added GPT API token
+- Migrated from create-react-app to Vite
+- added security to our api keys
+- memoization
 
 # to Deply
 
