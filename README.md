@@ -38,10 +38,16 @@
 - GPT search Page
 - GPT search Bar
 - Multi-language Search in our App
-- Added GPT API token
+- Get Open AI key
+- Added OPEN AI API token
 - Migrated from create-react-app to Vite
-- added security to our api keys
-- memoization
+- Added security to our api keys
+- Fetch movie search from TMDB
+- created GPT slice, added Data
+- Reused movieList component to build movie suggestion container
+- Memoization
+- Added .env file to git ignore
+- Making our site responsive
 
 # to Deply
 

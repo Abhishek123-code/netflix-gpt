@@ -59,13 +59,13 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute z-50 w-full pl-32 from-black bg-gradient-to-b flex justify-between items-center">
-      <img src={LOGO} alt="logo" className="w-56" />
+    <div className="absolute z-50 w-screen md:pl-32  from-black bg-gradient-to-b flex flex-col md:flex-row justify-between items-center">
+      <img src={LOGO} alt="logo" className="w-44 md:w-56 mx-auto md:mx-0" />
       {user && (
-        <div className="flex items-center">
+        <div className="flex items-center justify-between ">
           {toggleGptLang && (
             <select
-              className="p-2 bg-gray-700 text-white rounded-lg"
+              className="p-2 bg-gray-700 text-white rounded-lg text-sm md:text-base "
               onChange={handleLanguageChange}
             >
               {supportedLanguages.map((lang) => (
@@ -76,15 +76,19 @@ const Header = () => {
             </select>
           )}
           <button
-            className="text-white bg-purple-700 p-3 rounded-lg font-bold mx-10"
+            className="text-white bg-purple-700 p-3 rounded-lg font-medium md:font-bold mx-8 md:mx-10 text-sm md:text-base "
             onClick={handleGptToggle}
           >
             {toggleGptLang ? "Homepage" : "GPT Search"}
           </button>
-          <img alt="user" src={user?.photoURL} className="w-14 h-14" />
+          <img
+            alt="user"
+            src={user?.photoURL}
+            className="hidden md:block w-10 md:w-14 h-10 md:h-14"
+          />
           <button
             onClick={handleSignOut}
-            className="text-white font-bold bg-red-600 p-4 h-12 m-5 flex items-center rounded-xl cursor-pointer"
+            className="text-white font-medium md:font-bold bg-red-600 p-4 h-10 md:h-12 m-0 md:m-5 flex items-center rounded-xl cursor-pointer text-sm md:text-base"
           >
             Sign Out
           </button>

@@ -91,14 +91,18 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img src={BACKGROUND} alt="bachground" className="brightness-[.8]" />
+        <img
+          src={BACKGROUND}
+          alt="bachground"
+          className="brightness-[.8] h-screen object-cover"
+        />
       </div>
       <div className="">
         <form
           onSubmit={(e) => e.preventDefault()}
-          className=" absolute flex flex-col top-2/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/12 bg-black bg-opacity-80 text-white p-12 rounded-3xl"
+          className=" absolute flex flex-col top-2/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-max md:w-3/12 bg-black bg-opacity-80 text-white p-12 rounded-3xl"
         >
-          <h1 className="font-bold text-3xl  my-2">
+          <h1 className="font-bold text-2xl md:text-3xl  my-2">
             {isSignIn ? "Sign In" : "Sign Up"}
           </h1>
 
@@ -107,7 +111,7 @@ const Login = () => {
               ref={name}
               type="text"
               placeholder="Full Name"
-              className="p-4 my-4 w-full bg-gray-800 rounded-xl bg-opacity-80"
+              className="p-4 my-4 w-full bg-gray-800 rounded-xl bg-opacity-80 text-sm md:text-base"
               required
             ></input>
           )}
@@ -117,7 +121,7 @@ const Login = () => {
             type="text"
             placeholder="Email Address"
             required
-            className="p-4 my-4 w-full bg-gray-800 rounded-xl bg-opacity-80"
+            className="p-4 my-4 w-full bg-gray-800 rounded-xl bg-opacity-80 text-sm md:text-base"
           ></input>
 
           <input
@@ -125,7 +129,7 @@ const Login = () => {
             type="password"
             placeholder="password"
             required
-            className="p-4 my-4 w-full bg-gray-800 rounded-xl bg-opacity-80"
+            className="p-4 my-4 w-full bg-gray-800 rounded-xl bg-opacity-80 text-sm md:text-base"
           ></input>
 
           <p className="text-red-700 font-semibold text-lg py-2 ">
@@ -134,7 +138,7 @@ const Login = () => {
 
           <button
             onClick={handleValidation}
-            className="p-3 my-6 text-lg font-bold bg-red-600 hover:bg-red-700 rounded-xl w-full"
+            className="p-3 my-6 text-base md:text-lg font-bold bg-red-600 hover:bg-red-700 rounded-xl w-full"
           >
             {isSignIn ? "Sign In" : "Sign Up"}
           </button>
